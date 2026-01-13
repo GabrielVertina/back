@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import com.javainuse.db.UserRepository;
 import com.javainuse.model.User;
 
+
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(path = "users")
@@ -26,9 +27,7 @@ public class UserController {
 	public void createUser(@RequestBody User user){
 		userRepository.save(user);
 
-
 	}
-
 
 	@DeleteMapping( path = {"/id"} )
 	public User deleteUser(@PathVariable("id")long id ){
@@ -37,8 +36,5 @@ public class UserController {
 		return user;
 
 	}
-
-
-
 
 }
